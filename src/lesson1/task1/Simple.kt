@@ -1,6 +1,7 @@
 @file:Suppress("UNUSED_PARAMETER")
 package lesson1.task1
 
+import org.jetbrains.annotations.TestOnly
 import kotlin.math.*
 
 /**
@@ -47,10 +48,7 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
 /**
  * Пример главной функции
  */
-fun main(args: Array<String>) {
-    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
-    println("Root product: $x1x2")
-}
+
 
 /**
  * Тривиальная
@@ -59,6 +57,7 @@ fun main(args: Array<String>) {
  * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
  */
 fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
+
 
 /**
  * Тривиальная
@@ -93,6 +92,7 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
  */
 fun thirdDigit(number: Int): Int = TODO()
 
+
 /**
  * Простая
  *
@@ -118,3 +118,16 @@ fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
 fun numberRevert(number: Int): Int = TODO()
+
+fun main(args: Array<String>) {
+    var number = 478
+    var reversed = 0
+
+    while (number != 0) {
+        val digit = number % 10
+        reversed = reversed * 10 + digit
+        number /= 10
+    }
+
+    println("Reversed Number: $reversed")
+}
